@@ -86,7 +86,7 @@ export default function HeroSection() {
             Book a Free Consultation
           </a>
           <a
-            href="https://v2-phi-beige.vercel.app/Brochure.pdf"
+            href="Brochure.pdf"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-8 py-3 text-white transition hover:bg-white/10"
