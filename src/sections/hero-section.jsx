@@ -86,7 +86,7 @@ export default function HeroSection() {
             Book a Free Consultation
           </a>
           <a
-            href="Brochure.pdf"
+            href="https://drive.google.com/file/d/1AVL9-AK_R8hf544QBeeDNcfgciXX2mzU/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-8 py-3 text-white transition hover:bg-white/10"
