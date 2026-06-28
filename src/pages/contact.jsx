@@ -52,7 +52,7 @@ export default function ContactPage() {
               Share a few details about your project and we'll get back to you
               with a tailored plan.
             </p>
-            <form onSubmit={handleSubmit} action="https://formsubmit.co/manovasofts@gmail.com" method="POST" className="mt-8 space-y-6">
+            <form action="https://formsubmit.co/manovasofts@gmail.com" method="POST" className="mt-8 space-y-6">
                <label className="block text-sm text-gray-200">
                 Name
                 <input
