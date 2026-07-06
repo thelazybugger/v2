@@ -30,7 +30,7 @@ export default function CareerPage() {
             We are hiring
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mt-10 tracking-tight">
-            Build the Future of AI Assistants
+            Join Our Team
           </h1>
           <p className="text-gray-300 mt-6 text-lg font-light leading-relaxed">
             We're a fast-moving team dedicated to turning complex business logic
