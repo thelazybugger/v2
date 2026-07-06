@@ -4,28 +4,14 @@ import { Briefcase, MapPin, Clock, ArrowUpRight } from 'lucide-react';
 const OPEN_POSITIONS = [
   {
     id: 1,
-    title: "Senior AI Engineer",
-    department: "Engineering",
-    location: "Remote ",
-    type: "Full-Time",
-    compensation: "Internship"
-  },
-  {
-    id: 2,
-    title: "Full-Stack Developer (React / Node)",
-    department: "Engineering",
-    location: "Remote",
-    type: "Full-Time",
-    compensation: "Internship"
-  },
-  {
-    id: 3,
-    title: "Graphic Designer",
-    department: "Design",
+    title: "Business Devlopment Intern",
+    department: "Business Devlopment",
     location: "Remote",
     type: "Part-Time",
     compensation: "Internship"
-  }
+  },
+
+
 ];
 
 export default function CareerPage() {
