@@ -16,8 +16,7 @@ export default function Footer() {
               <img src="/assets/Manova.png" alt="Manova Softs" className="h-15 w-auto" />
             </a>
             <p className="text-sm/6 text-neutral-300 max-w-96">
-              Manova Softs creates premium digital products with reliable
-              delivery, polished visuals, and measurable business impact.
+            Creations By Heart.
             </p>
             <div className="flex gap-5 md:gap-6 order-1 md:order-2">
               <a
