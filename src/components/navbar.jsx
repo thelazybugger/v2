@@ -29,9 +29,8 @@ export default function Navbar() {
           fixed top-0 left-0 right-0 z-50
           flex items-center justify-between
           px-6 md:px-12 lg:px-24 py-4
-          bg-white/5
           backdrop-blur-xl
-          border-sm border-white/10
+          border-b border-white/10
           shadow-sm shadow-black/10
         "
       >
