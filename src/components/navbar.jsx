@@ -31,7 +31,7 @@ export default function Navbar() {
           px-6 md:px-12 lg:px-24 py-4
           bg-white/5
           backdrop-blur-xl
-          border-b border-white/10
+          border-sm border-white/10
           shadow-sm shadow-black/10
         "
       >
