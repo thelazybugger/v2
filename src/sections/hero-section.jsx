@@ -47,7 +47,7 @@ export default function HeroSection() {
             damping: 70,
           }}
         >
-          Building AI Products for your Business.
+          AI Products for your Business.
         </motion.h1>
 
         <motion.p
