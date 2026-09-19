@@ -60,7 +60,7 @@ export default function Navbar() {
           ))}
 
           <a
-            href="https://calendly.com/manovasofts/30min"
+            href="https://cal.com/manova-softs-hu6us8/30min"
             target="_blank"
             rel="noreferrer"
             className="
