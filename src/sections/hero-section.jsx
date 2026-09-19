@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { getCalApi } from "@calcom/embed-react";
 
 export default function HeroSection() {
+  // Initialize the Cal.com SDK popup logic once the component mounts
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "30min" });
+      cal("ui", {
+        styles: { eventTypeListItem: { backgroundColor: "#ffffff" } },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <motion.div
@@ -15,8 +28,7 @@ export default function HeroSection() {
         <div className="absolute rounded-full top-80 left-1/3 -translate-x-1/2 w-96 h-96 bg-black blur-[120px] shadow-[0_0_100px_rgba(0,0,0,0.5)]" />
         <div className="absolute rounded-full top-80 right-0 -translate-x-1/2 bg-black w-96 h-96 blur-[120px] shadow-[0_0_100px_rgba(0,0,0,0.5)]" />
         <div className="absolute rounded-full left-0 top-40 w-72 h-72 bg-black blur-[120px]" />
-                <div className="absolute rounded-full right-0 top-40 w-72 h-72 bg-black blur-[120px]" />
-
+        <div className="absolute rounded-full right-0 top-40 w-72 h-72 bg-black blur-[120px]" />
       </motion.div>
 
       <motion.section className="flex flex-col items-center px-4 pt-24 text-center md:pt-32">
@@ -31,9 +43,7 @@ export default function HeroSection() {
             stiffness: 320,
             damping: 70,
           }}
-        >
-          
-        </motion.p>
+        ></motion.p>
 
         <motion.h1
           className="mt-6 text-4xl md:text-6xl font-semibold tracking-tight text-white max-w-3xl leading-tight"
@@ -62,7 +72,7 @@ export default function HeroSection() {
             damping: 70,
           }}
         >
-          An AI drivenStartup that research, plan, and then execute tasks.
+          An AI driven Startup that research, plan, and then execute tasks.
         </motion.p>
 
         <motion.div
@@ -77,21 +87,24 @@ export default function HeroSection() {
             damping: 70,
           }}
         >
-          <a
-            href="https://cal.com/manova-softs-hu6us8/30min"
-            target="_blank"
-            rel="noreferrer"
+          {/* Converted to a HTML button with required Cal.com data attributes */}
+          <button
+            data-cal-namespace="30min"
+            data-cal-link="manova-softs-hu6us8/30min"
+            data-cal-config='{"layout":"month_view"}'
             className="inline-flex items-center justify-center glass rounded-2xl bg-[#fff] px-8 py-3 text-black font-semibold transition hover:bg-[#FAF9F6]/90"
           >
             Book a Free Consultation
-          </a>
+          </button>
+          
+          {/* Kept your original link style & destination intact for the brochure */}
           <a
             href="https://drive.google.com/file/d/1cXDvr3Kc5XTZhqiItdapPyO3xk9YqsLc/view"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-8 py-3 text-white transition hover:bg-white/10"
           >
-            Get Our Brochure 
+            Get Our Brochure
           </a>
         </motion.div>
 
