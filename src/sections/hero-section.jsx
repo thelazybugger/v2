@@ -78,7 +78,7 @@ export default function HeroSection() {
           }}
         >
           <a
-            href="https://calendly.com/manovasofts/30min"
+            href="https://cal.com/manova-softs-hu6us8/30min"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center glass rounded-2xl bg-[#fff] px-8 py-3 text-black font-semibold transition hover:bg-[#FAF9F6]/90"
