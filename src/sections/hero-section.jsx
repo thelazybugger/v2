@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { ArrowRight, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { getCalApi } from "@calcom/embed-react";
+import Cal, { getCalApi } from "@calcom/embed-react";
 
 export default function HeroSection() {
-  // Initialize the Cal.com SDK popup logic once the component mounts
+  // Initialize the Cal.com SDK once the component mounts
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "30min" });
@@ -18,6 +17,7 @@ export default function HeroSection() {
 
   return (
     <>
+      {/* Background Ambient Glow Effects */}
       <motion.div
         className="fixed inset-0 overflow-hidden -z-20 bg-[#0C1C4D] pointer-events-none"
         initial={{ opacity: 0.4 }}
@@ -31,22 +31,11 @@ export default function HeroSection() {
         <div className="absolute rounded-full right-0 top-40 w-72 h-72 bg-black blur-[120px]" />
       </motion.div>
 
-      <motion.section className="flex flex-col items-center px-4 pt-24 text-center md:pt-32">
-        <motion.p
-          className="text-gray-300 text-sm md:text-base"
-          initial={{ y: -20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            delay: 0.15,
-            type: "spring",
-            stiffness: 320,
-            damping: 70,
-          }}
-        ></motion.p>
-
+      {/* Main Content Section */}
+      <motion.section className="flex flex-col items-center px-4 pt-24 text-center md:pt-32 pb-24">
+        {/* Animated Headline */}
         <motion.h1
-          className="mt-6 text-4xl md:text-6xl font-semibold tracking-tight text-white max-w-3xl leading-tight"
+          className="text-4xl md:text-6xl font-semibold tracking-tight text-white max-w-3xl leading-tight"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -60,6 +49,7 @@ export default function HeroSection() {
           AI Products for your Business.
         </motion.h1>
 
+        {/* Animated Description */}
         <motion.p
           className="mt-6 max-w-2xl text-center text-gray-300 leading-relaxed text-base md:text-lg"
           initial={{ y: 20, opacity: 0 }}
@@ -72,42 +62,49 @@ export default function HeroSection() {
             damping: 70,
           }}
         >
-          An AI driven Startup that research, plan, and then execute tasks.
+          An AI driven Startup that researches, plans, and then executes tasks.
         </motion.p>
 
+        {/* 
+          Inline Calendar Element (Styled exactly like the reference image)
+        */}
         <motion.div
-          className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center"
-          initial={{ y: 20, opacity: 0 }}
+          className="mt-14 w-full max-w-5xl text-left overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/40"
+          initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{
             delay: 0.4,
             type: "spring",
-            stiffness: 240,
-            damping: 70,
+            stiffness: 200,
+            damping: 60,
           }}
         >
-          {/* Converted to a HTML button with required Cal.com data attributes */}
-          <button
-            data-cal-namespace="30min"
-            data-cal-link="manova-softs-hu6us8/30min"
-            data-cal-config='{"layout":"month_view"}'
-            className="inline-flex items-center justify-center glass rounded-2xl bg-[#fff] px-8 py-3 text-black font-semibold transition hover:bg-[#FAF9F6]/90"
-          >
-            Book a Free Consultation
-          </button>
-          
-          {/* Kept your original link style & destination intact for the brochure */}
-          <a
-            href="https://drive.google.com/file/d/1cXDvr3Kc5XTZhqiItdapPyO3xk9YqsLc/view"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-8 py-3 text-white transition hover:bg-white/10"
-          >
-            Get Our Brochure
-          </a>
+          {/* Header Bar matching your image styling */}
+          <div className="bg-[#f4f3ff] p-6 sm:px-8 border-b border-gray-200">
+            <span className="inline-block text-xs font-bold tracking-wider text-[#57534e] bg-[#e7e5e4] px-3 py-1 rounded-full uppercase">
+              30-MIN ACCOUNT AUDIT // DIRECT STRATEGY DESK
+            </span>
+            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
+              BOOK YOUR ACCOUNT AUDIT
+            </h2>
+            <p className="mt-1 text-sm md:text-base text-gray-600">
+              Select an open time slot directly below. We'll run a screen-share audit of your real ad accounts.
+            </p>
+          </div>
+
+          {/* Cal.com System Scheduler Block */}
+          <div className="bg-white min-h-[650px] w-full">
+            <Cal
+              namespace="30min"
+              calLink="manova-softs-hu6us8/30min"
+              style={{ width: "100%", height: "100%", minHeight: "650px" }}
+              config={{ layout: "month_view" }}
+            />
+          </div>
         </motion.div>
 
+        {/* Features Info Footer Row */}
         <div className="mt-14 rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl shadow-black/30 max-w-4xl w-full">
           <div className="grid gap-4 sm:grid-cols-3 text-left">
             <div>
