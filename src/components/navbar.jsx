@@ -30,7 +30,7 @@ export default function Navbar() {
           flex items-center justify-between
           px-6 md:px-12 lg:px-24 py-4
           backdrop-blur-xl
-          border-b border-white/10
+  
           shadow-sm shadow-black/10
         "
       >
