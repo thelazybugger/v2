@@ -16,7 +16,7 @@ const OPEN_POSITIONS = [
 
 export default function CareerPage() {
   return (
-    <div className="min-h-screen bg-[] text-white relative overflow-hidden px-4 pt-12 pb-16">
+    <div className="min-h-screen text-white relative overflow-hidden px-4 pt-12 pb-16">
       {/* Background Decorative Ambient Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute rounded-full top-20 left-1/4 w-96 h-96 bg-black blur-[120px]" />
