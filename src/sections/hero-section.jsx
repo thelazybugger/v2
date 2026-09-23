@@ -62,7 +62,7 @@ export default function HeroSection() {
             damping: 70,
           }}
         >
-          An AI driven Startup that researches, plans, and then executes tasks.
+          An AI driven  Startup that researches, plans, and then executes tasks.
         </motion.p>
 
         {/* 
