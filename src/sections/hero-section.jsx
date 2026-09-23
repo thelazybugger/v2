@@ -46,7 +46,7 @@ export default function HeroSection() {
             damping: 70,
           }}
         >
-           Products for your Business.
+          AI Products for your Business.
         </motion.h1>
 
         {/* Animated Description */}
