@@ -70,15 +70,6 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        <motion.p
-          className="mt-5 text-xs tracking-wide text-blue-200/60 sm:text-sm"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          Research. Strategy. Execution.
-        </motion.p>
-
         {/* Feature cards */}
         <motion.div
           className="mt-16 grid w-full max-w-5xl gap-4 text-left sm:grid-cols-3 md:mt-20"
