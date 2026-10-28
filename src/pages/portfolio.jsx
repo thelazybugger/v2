@@ -35,6 +35,18 @@ const caseStudies = [
     result:
       "The product was ready for investor demos and customer validation within weeks.",
   },
+ {
+    title: "Revital Yoga",
+    industry: "Community & Yoga",
+    tech: ["PHP", "TailwindCSS", "SQL"],
+    link: "https://www.revitalyoga.in/",
+    problem:
+      "losing out on local search visibility, direct class bookings, and professional credibility, though you can still start a business using social media or third-party platforms.",
+    solution:
+      "We delivered an end-to-end MVP with subscription flows, dashboard access, and a launch-ready architecture.",
+    result:
+      "Having a yoga website helps you build professional trust, attract new local and global students, and provide a 24/7 digital front desk for your classes.",
+  },
 ];
 
 export default function PortfolioPage() {
