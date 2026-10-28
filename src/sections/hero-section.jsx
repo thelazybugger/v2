@@ -36,9 +36,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           AI Products for Your Business.
-          <span className="mt-3 block bg-gradient-to-r from-blue-300 via-indigo-200 to-cyan-300 bg-clip-text text-transparent">
-            Built to Move You Forward.
-          </span>
+         
         </motion.h1>
 
         <motion.p
@@ -47,9 +45,8 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          We research, plan, and execute with AI to help businesses streamline
-          operations, solve complex problems, and transform ambitious ideas into
-          scalable products.
+          An AI-driven startup research, product planning, MVP development, scalable architecture design, and ongoing technical support.
+
         </motion.p>
 
         {/* Calls to action — no embedded calendar */}
