@@ -19,17 +19,7 @@ export default function HeroSection() {
 
       {/* Main hero content */}
       <motion.section className="relative flex min-h-[85vh] flex-col items-center px-4 pb-20 pt-28 text-center md:justify-center md:pt-36">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-300/20 bg-blue-400/10 px-4 py-2 text-xs font-semibold tracking-wider text-blue-100 sm:text-sm"
-        >
-          <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
-          AI-POWERED SOLUTIONS FOR GROWING BUSINESSES
-        </motion.div>
 
-        <motion.h1
           className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-7xl"
           initial={{ y: 22, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
