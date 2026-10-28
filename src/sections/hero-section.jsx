@@ -11,7 +11,7 @@ export default function HeroSection() {
           animate={{ scale: [1, 1.12, 1], opacity: [0.35, 0.65, 0.35] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
-        <div className="absolute right-0 top-80 h-96 w-96 rounded-full bg-indigo-700/20 blur-[120px]" />
+        <div className="absolute right-0 top-80 h-96 w-96 rounded-full bg-black-700/20 blur-[120px]" />
         <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-black/40 blur-[120px]" />
         <div className="absolute right-0 top-1/3 h-72 w-72 rounded-full bg-black/40 blur-[120px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080F2B]/60" />
