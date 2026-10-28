@@ -1,163 +1,142 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import Cal, { getCalApi } from "@calcom/embed-react";
 
 export default function HeroSection() {
-  // Initialize the Cal.com SDK once the component mounts
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "30min" });
-      cal("ui", {
-        styles: { eventTypeListItem: { backgroundColor: "#ffffff" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
-  }, []);
-
   return (
     <>
-      {/* Background Ambient Glow Effects */}
-      <motion.div
-        className="fixed inset-0 overflow-hidden -z-20 bg-[#0C1C4D] pointer-events-none"
-        initial={{ opacity: 0.4 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="absolute rounded-full top-80 left-1/3 -translate-x-1/2 w-96 h-96 bg-black blur-[120px] shadow-[0_0_100px_rgba(0,0,0,0.5)]" />
-        <div className="absolute rounded-full top-80 right-0 -translate-x-1/2 bg-black w-96 h-96 blur-[120px] shadow-[0_0_100px_rgba(0,0,0,0.5)]" />
-        <div className="absolute rounded-full left-0 top-40 w-72 h-72 bg-black blur-[120px]" />
-        <div className="absolute rounded-full right-0 top-40 w-72 h-72 bg-black blur-[120px]" />
-      </motion.div>
+      {/* Royal-blue ambient background */}
+      <div className="pointer-events-none fixed inset-0 -z-20 overflow-hidden bg-[#0C1C4D]">
+        <motion.div
+          className="absolute left-1/4 top-40 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]"
+          animate={{ scale: [1, 1.12, 1], opacity: [0.35, 0.65, 0.35] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <div className="absolute right-0 top-80 h-96 w-96 rounded-full bg-indigo-700/20 blur-[120px]" />
+        <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-black/40 blur-[120px]" />
+        <div className="absolute right-0 top-1/3 h-72 w-72 rounded-full bg-black/40 blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080F2B]/60" />
+      </div>
 
-      {/* Main Content Section */}
-      <motion.section className="flex flex-col items-center px-4 pt-24 text-center md:pt-32 pb-24">
-        {/* Animated Headline */}
-        <motion.h1
-          className="text-4xl md:text-6xl font-semibold tracking-tight text-white max-w-3xl leading-tight"
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            delay: 0.2,
-            type: "spring",
-            stiffness: 260,
-            damping: 70,
-          }}
+      {/* Main hero content */}
+      <motion.section className="relative flex min-h-[85vh] flex-col items-center px-4 pb-20 pt-28 text-center md:justify-center md:pt-36">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-300/20 bg-blue-400/10 px-4 py-2 text-xs font-semibold tracking-wider text-blue-100 sm:text-sm"
         >
-          AI Products for your Business.
+          <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+          AI-POWERED SOLUTIONS FOR GROWING BUSINESSES
+        </motion.div>
+
+        <motion.h1
+          className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-7xl"
+          initial={{ y: 22, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          AI Products for Your Business.
+          <span className="mt-3 block bg-gradient-to-r from-blue-300 via-indigo-200 to-cyan-300 bg-clip-text text-transparent">
+            Built to Move You Forward.
+          </span>
         </motion.h1>
 
-        {/* Animated Description */}
         <motion.p
-          className="mt-6 max-w-2xl text-center text-gray-300 leading-relaxed text-base md:text-lg"
+          className="mt-7 max-w-2xl text-base leading-8 text-blue-100/75 md:text-lg"
           initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            delay: 0.3,
-            type: "spring",
-            stiffness: 240,
-            damping: 70,
-          }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
         >
-          An AI driven  Startup that researches, plans, and then executes tasks.
+          We research, plan, and execute with AI to help businesses streamline
+          operations, solve complex problems, and transform ambitious ideas into
+          scalable products.
         </motion.p>
 
-        {/* 
-          Beautifully Styled Inline Calendar Layout Matching the Reference Image
-        */}
+        {/* Calls to action — no embedded calendar */}
         <motion.div
-          className="mt-14 w-full max-w-5xl text-left overflow-hidden rounded-[2rem] bg-[#FAF9FF] shadow-2xl shadow-black/50 border border-white/10"
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            delay: 0.4,
-            type: "spring",
-            stiffness: 200,
-            damping: 60,
-          }}
+          className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
         >
-          {/* Header Bar matching screenshot colors and typography */}
-          <div className="p-6 sm:p-8 pb-4">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              {/* Badge Tag */}
-              <span className="inline-block text-xs font-bold tracking-wider text-[#4A3AFF] bg-[#E8E6FF] px-4 py-1.5 rounded-full uppercase">
-                30-MIN ACCOUNT AUDIT // DIRECT STRATEGY DESK
-              </span>
-              
-              {/* Top Right Actions */}
-              <div className="flex items-center gap-4 text-sm font-medium">
-                <a 
-                  href="https://cal.com" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="text-[#1A0B40]/70 hover:text-[#4A3AFF] inline-flex items-center gap-1 transition"
-                >
-                  Open in Cal.com
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-                <button className="flex items-center justify-center w-7 h-7 rounded-full bg-[#1A0B40]/5 text-[#1A0B40]/70 hover:bg-[#1A0B40]/10 transition">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+          <a
+            href="/services"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#4169E1] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1 hover:bg-[#3155C8] hover:shadow-blue-500/20 sm:w-auto"
+          >
+            Explore Our Services
+            <svg
+              className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+            </svg>
+          </a>
+          <a
+            href="/about"
+            className="inline-flex w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/10 sm:w-auto"
+          >
+            Discover Manova
+          </a>
+        </motion.div>
 
-            {/* Main Title & Context Descriptions */}
-            <h2 className="mt-4 text-2xl md:text-3xl font-extrabold text-[#1A0B40] tracking-tight">
-              BOOK YOUR ACCOUNT AUDIT
-            </h2>
-            <p className="mt-2 text-sm md:text-base text-[#524B6E]">
-              Select an open time slot directly below. We'll run a screen-share audit of your real ad accounts.
+        <motion.p
+          className="mt-5 text-xs tracking-wide text-blue-200/60 sm:text-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          Research. Strategy. Execution.
+        </motion.p>
+
+        {/* Feature cards */}
+        <motion.div
+          className="mt-16 grid w-full max-w-5xl gap-4 text-left sm:grid-cols-3 md:mt-20"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/[0.07]">
+            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-blue-300/20 bg-blue-400/10 text-cyan-300">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 2L4 14h7l-1 8 10-13h-7l0-7z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-white">Speed</h3>
+            <p className="mt-3 text-sm leading-7 text-blue-100/65">
+              Launch faster with focused planning, smart workflows, and efficient execution.
             </p>
           </div>
 
-          {/* Cal.com System Scheduler Block nested inside an Inner Card Container */}
-          <div className="bg-white mx-4 mb-4 rounded-2xl border border-gray-100 overflow-hidden shadow-inner min-h-[600px]">
-            <Cal
-              namespace="30min"
-              calLink="manova-softs-hu6us8/30min"
-              style={{ width: "100%", height: "100%", minHeight: "600px" }}
-              config={{ layout: "month_view" }}
-            />
+          <div className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/[0.07]">
+            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-blue-300/20 bg-blue-400/10 text-cyan-300">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l6-6 4 4 8-9M14 6h7v7" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-white">Scale</h3>
+            <p className="mt-3 text-sm leading-7 text-blue-100/65">
+              Build flexible digital products and systems that grow with your business.
+            </p>
+          </div>
+
+          <div className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/[0.07]">
+            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-blue-300/20 bg-blue-400/10 text-cyan-300">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-white">Support</h3>
+            <p className="mt-3 text-sm leading-7 text-blue-100/65">
+              Collaborate with a team focused on quality, reliability, and long-term product success.
+            </p>
           </div>
         </motion.div>
-
-        {/* Features Info Footer Row */}
-        <div className="mt-14 rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl shadow-black/30 max-w-4xl w-full">
-          <div className="grid gap-4 sm:grid-cols-3 text-left">
-            <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-cyan-500">
-                Speed
-              </p>
-              <p className="mt-3 text-gray-300">
-                Launch quickly without sacrificing premium design.
-              </p>
-            </div>
-            <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-cyan-500">
-                Scale
-              </p>
-              <p className="mt-3 text-gray-300">
-                Architecture that supports future growth and feature velocity.
-              </p>
-            </div>
-            <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-cyan-500">
-                Support
-              </p>
-              <p className="mt-3 text-gray-300">
-                Clear collaboration and long-term product care.
-              </p>
-            </div>
-          </div>
-        </div>
       </motion.section>
     </>
   );
