@@ -7,7 +7,7 @@ export default function HeroSection() {
       {/* Royal-blue ambient background */}
       <div className="pointer-events-none fixed inset-0 -z-20 overflow-hidden bg-[#0C1C4D]">
         <motion.div
-          className="absolute left-1/4 top-40 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]"
+          className="absolute left-1/4 top-40 h-96 w-96 rounded-full bg-black blur-[120px]"
           animate={{ scale: [1, 1.12, 1], opacity: [0.35, 0.65, 0.35] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
