@@ -15,10 +15,10 @@ export default function HeroSection() {
           }}
           transition={{ duration: 8, repeat: Infinity }}
         />
-        <div className="absolute right-0 top-1/2 h-96 w-96 rounded-full bg-black blur-[110px]" />
-        <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-black blur-[110px]" />
-        <div className="absolute right-0 top-3/4 h-72 w-72 rounded-full bg-black blur-[110px]" />
-        <div className="absolute inset-0 h-72 w-72 rounded-full bg-black blur-[110px]" />
+        <div className="absolute right-0 top-1/2 h-96 w-96 rounded-full bg-black blur-[90px]" />
+        <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-black blur-[90px]" />
+        <div className="absolute right-0 top-3/4 h-72 w-72 rounded-full bg-black blur-[90px]" />
+        <div className="absolute inset-0 h-72 w-72 rounded-full bg-black blur-[90px]" />
       </div>
 
       {/* Main hero section */}
