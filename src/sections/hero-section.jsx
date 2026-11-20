@@ -8,7 +8,7 @@ export default function HeroSection() {
       {/* Royal-blue ambient background */}
       <div className="pointer-events-none fixed inset-0 -z-20 overflow-hidden bg-[#0A1843]">
         <motion.div
-          className="absolute left-1/4 top-40 h-96 w-96 rounded-full bg-black blur-[50px]"
+          className="absolute left-1/4 top-40 h-96 w-96 rounded-full bg-black blur-[70px]"
           animate={{
             scale: [1, 1.12, 1],
             opacity: [0.35, 0.65, 0.35],
@@ -18,7 +18,7 @@ export default function HeroSection() {
         <div className="absolute right-0 top-1/2 h-96 w-96 rounded-full bg-black blur-[50px]" />
         <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-black blur-[50px]" />
         <div className="absolute right-0 top-3/4 h-72 w-72 rounded-full bg-black blur-[50px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0000]" />
+        <div className="absolute inset-0  h-72 w-72 rounded-full bg-black blur-[50px]" />
       </div>
 
       {/* Main hero section */}
