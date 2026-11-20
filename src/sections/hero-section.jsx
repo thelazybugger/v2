@@ -58,7 +58,7 @@ export default function HeroSection() {
   transition={{ duration: 0.7, delay: 0.3 }}
 >
   <a
-    href="/Brochure.pdf"
+    href="https://drive.google.com/file/d/1cXDvr3Kc5XTZhqiItdapPyO3xk9YqsLc/view"
     className="group inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-white px-8 py-4 text-base font-semibold text-black shadow-lg shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:bg-[#FAF9F6] sm:w-auto"
   >
     Get Our Brochure
